@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -12,6 +14,12 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+var hbs = require('hbs');
+var moment = require('moment');
+// Helper to format date/time sent by Graph
+hbs.registerHelper('eventDateTime', function(dateTime){
+  return moment(dateTime).add(2, 'hours').format('DD/MM/YYYY HH:mm');
+});
 
 app.use(logger('dev'));
 app.use(express.json());
