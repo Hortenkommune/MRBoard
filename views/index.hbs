@@ -1,2 +1,26 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="jumbotron">
+  <h1>Møter i dag</h1>
+  <p class="lead">Oversikt over dagen's møter i Horten rådhus</p>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Arrangør</th>
+      <th scope="col">Tittel</th>
+      <th scope="col">Start</th>
+      <th scope="col">Slutt</th>
+      <th scope="col">Møterom</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each events}}
+      <tr>
+        <td>{{this.organizer.emailAddress.name}}</td>
+        <td>{{this.subject}}</td>
+        <td>{{eventDateTime this.start.dateTime}}</td>
+        <td>{{eventDateTime this.end.dateTime}}</td>
+        <td>{{this.location.displayName}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
