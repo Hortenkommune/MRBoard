@@ -10,8 +10,8 @@
         if(mm<10) {
             mm='0'+mm;
         } 
-        return dd + '/' + mm + '/' + yyyy;
-        //return "27/06/2019";
+        //return dd + '/' + mm + '/' + yyyy;
+        return "27/06/2019";
     };
     var formatTime = function(now){
         now = now || today;
