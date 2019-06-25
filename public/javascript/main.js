@@ -10,8 +10,8 @@
         if(mm<10) {
             mm='0'+mm;
         } 
-        //return dd + '/' + mm + '/' + yyyy;
-        return "27/06/2019";
+        return dd + '/' + mm + '/' + yyyy;
+        //return "27/06/2019";
     };
     var formatTime = function(now){
         now = now || today;
@@ -33,6 +33,7 @@
     }, 60000);
 
 
+    var meetings = false;
 
     $('.meetings tbody tr').each(function(i){
         $(this).find('td').each(function(j){
@@ -42,6 +43,8 @@
             if (j==2){
                 if (html.slice(0, 10) !== formatDate( new Date() )){
                     $(this).parent().hide();
+                } else  {
+                    meetings = true;
                 }
             }
             
@@ -80,7 +83,10 @@
         });
     });
     
-    
+    // Show message; No meetings today. 
+    if (!meetings) {
+        $('.meetings .empty').fadeIn();
+    }
 
     // Show meetings
     $('.meetings').fadeIn();
@@ -89,6 +95,6 @@
     var minutes = 30;    
     var millisec = minutes * 60 * 1000;
     setTimeout(function(){
-       // location.reload();
+        location.reload();
     }, millisec)
 })();
