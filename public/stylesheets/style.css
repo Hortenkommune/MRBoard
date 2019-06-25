@@ -39,6 +39,11 @@
   padding: 0 3rem;
 }
 
+.meetings .empty {
+  color: gray;
+    font-size: 35px;
+}
+
 body {
   font-family: Calibri;
   font-size: 35px;
