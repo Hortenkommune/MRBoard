@@ -1,5 +1,43 @@
+.header {
+  padding: 2rem 3rem 10rem;
+  margin-bottom: 2rem;
+  background-color: #069;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.header h1{
+  font-size: 3.5rem;
+}
+
+.header .text {
+  float: left;
+}
+
+.header .date{
+  float: left;
+  font-size: 3.1rem;
+  margin-left: 5rem;
+}
+
+.header .img {
+  float: right;
+  width: 240px;
+  text-align: right;
+}
+
+.header .img img {
+  width: 100%;
+}
+
+.meetings {
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
 body {
-  padding-top: 4.5rem;
+  font-family: Calibri;
+  font-size: 24px;
 }
 
 .alert-pre {
