@@ -1,5 +1,5 @@
 .header {
-  padding: 2rem 3rem 10rem;
+  padding: 2rem 3rem 3rem;
   margin-bottom: 2rem;
   background-color: #069;
   color: #fff;
@@ -11,19 +11,23 @@
 }
 
 .header .text {
-  float: left;
+  margin-top: 2rem;
+  text-align: center;
 }
 
-.header .date{
-  float: left;
-  font-size: 3.1rem;
+.header .date {
+  font-size: 5.5rem;
   margin-left: 5rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 3rem;
 }
 
 .header .img {
-  float: right;
   width: 240px;
-  text-align: right;
+  position: absolute;
+  left: 3rem;
+  top: 1.5rem;
 }
 
 .header .img img {
@@ -37,7 +41,7 @@
 
 body {
   font-family: Calibri;
-  font-size: 24px;
+  font-size: 35px;
 }
 
 .alert-pre {
