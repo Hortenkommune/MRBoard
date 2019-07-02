@@ -102,7 +102,6 @@ hbs.registerHelper('meetingroom', function (room) {
   var roomstr;
   rooms.forEach(function (i) {
     if (room.match(i.regex)) {
-      console.log(i.regex);
       if (i.roomname == "DONTSHOW") {
       } else {
         if (roomstr) roomstr += ", ";
