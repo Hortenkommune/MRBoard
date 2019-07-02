@@ -27,6 +27,6 @@
     var minutes = 15;    
     var millisec = minutes * 60 * 1000;
     setTimeout(function(){
-        location.reload();
+        //location.reload();
     }, millisec)
 })();

@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 var hbs = require('hbs');
 var moment = require('moment-timezone');
-// Helper to format date/time sent by Graph
+// hbs helpers
 hbs.registerHelper('eventDateTime', function (dateTime) {
   return moment.utc(dateTime).tz("Europe/Oslo").format('HH:mm')
 });
@@ -111,6 +111,12 @@ hbs.registerHelper('meetingroom', function (room) {
     }
   });
   return roomstr;
+});
+hbs.registerHelper('now', function () {
+  moment.locale('nb-no');
+  var now = moment().tz("Europe/Oslo").format('LLLL');
+  var slstr = now.slice(0, -10);
+  return slstr;
 });
 
 app.use(logger('dev'));

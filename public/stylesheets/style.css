@@ -10,8 +10,12 @@
   font-size: 3.5rem;
 }
 
+.header p{
+  font-size: 1.5rem;
+}
+
 .header .text {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   text-align: center;
 }
 
@@ -27,7 +31,7 @@
   width: 240px;
   position: absolute;
   left: 3rem;
-  top: 1.5rem;
+  top: 2rem;
 }
 
 .header .img img {
