@@ -7,14 +7,13 @@
   },
   "dependencies": {
     "@microsoft/microsoft-graph-client": "^1.7.0",
-    "add-subtract-date": "^1.0.14",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.0.0",
     "express": "~4.16.1",
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
-    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.25",
     "morgan": "~1.9.1",
     "request": "^2.88.0"
   }

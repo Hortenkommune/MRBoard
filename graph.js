@@ -1,19 +1,17 @@
 require('dotenv').config();
-const addSubtractDate = require("add-subtract-date");
+var moment = require("moment-timezone");
 var graph = require('@microsoft/microsoft-graph-client');
 const AADCALID = process.env.AADCALID;
 
 module.exports = {
-  getEvents: async function(accessToken) {
-    var starttime = new Date(new Date())
-    var endtime = new Date(addSubtractDate.add(new Date(), 7, "days"))
-    console.log(starttime.toUTCString())
-    console.log(endtime.toUTCString())
+  getEvents: async function (accessToken) {
+    var starttime = moment.utc().format();
+    var endtime = moment.utc().add(1, 'days').format();
     const client = getAuthenticatedClient(accessToken);
     const events = await client
       .api('/users/'+AADCALID+'/events')
       .select('subject','location','organizer','start','end')
-      .filter("start/dateTime ge '"+starttime.toUTCString()+"'","end/dateTime le '"+endtime.toUTCString()+"'",'')
+      .filter("start/dateTime ge '" + starttime + "'", "end/dateTime le '" + endtime +"'",'')
       .orderby('start/dateTime')
       .get();
     return events;

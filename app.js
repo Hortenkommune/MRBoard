@@ -15,10 +15,10 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 var hbs = require('hbs');
-var moment = require('moment');
+var moment = require('moment-timezone');
 // Helper to format date/time sent by Graph
-hbs.registerHelper('eventDateTime', function(dateTime){
-  return moment(dateTime).add(2, 'hours').format('DD/MM/YYYY HH:mm');
+hbs.registerHelper('eventDateTime', function (dateTime) {
+  return moment.utc(dateTime).tz("Europe/Oslo").format('HH:mm')
 });
 
 app.use(logger('dev'));

@@ -38,21 +38,6 @@
     $('.meetings tbody tr').each(function(i){
         $(this).find('td').each(function(j){
             var html = $(this).html();
-            
-            //Check date
-            if (j==2){
-                if (html.slice(0, 10) !== formatDate( new Date() )){
-                    $(this).parent().hide();
-                } else  {
-                    meetings = true;
-                }
-            }
-            
-            //Get time
-            if (j==2 || j==3){
-                $(this).html( html.slice(html.length-5, html.length) );
-            }
-
             //Replace rooms
             if (j==4){
                 var rooms = [
@@ -84,9 +69,7 @@
     });
     
     // Show message; No meetings today. 
-    if (!meetings) {
-        $('.meetings .empty').fadeIn();
-    }
+    $('.meetings .empty').fadeIn();
 
     // Show meetings
     $('.meetings').fadeIn();
