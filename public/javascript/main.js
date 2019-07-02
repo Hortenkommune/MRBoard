@@ -52,6 +52,65 @@
                     {
                         regex: /soldugg/ig,
                         roomname: "Soldugg"
+                    },
+                    {
+                        regex: /mamrelund/ig,
+                        roomname: "Mamrelund"
+                    },
+                    {
+                        regex: /bøk/ig,
+                        roomname: "Bøk"
+                    },
+                    {
+                        regex: /eik/ig,
+                        roomname: "Eik"
+                    },
+                    {
+                        regex: /hassel/ig,
+                        roomname: "Hassel"
+                    },
+                    {
+                        regex: /misteltein/ig,
+                        roomname: "Misteltein"
+                    },
+                    {
+                        regex: /stromodden/ig,
+                        roomname: "Stormodden"
+                    },
+                    {
+                        regex: /bastøy/ig,
+                        roomname: "Bastøy"
+                    },
+                    {
+                        regex: /løvøya/ig,
+                        roomname: "Løvøya"
+                    },
+                    {
+                        regex: /rødskjær/ig,
+                        roomname: "Rødskjær"
+                    },
+                    {
+                        regex: /vealøs/ig,
+                        roomname: "Vealøs"
+                    },
+                    {
+                        regex: /østenskjær/ig,
+                        roomname: "Østenskjær"
+                    },
+                    {
+                        regex: /møterom ra/ig,
+                        roomname: "Ra"
+                    },
+                    {
+                        regex: /adalsborgen/ig,
+                        roomname: "Adalsborgen"
+                    },
+                    {
+                        regex: /ynglingesalen/ig,
+                        roomname: "Ynglingesalen"
+                    },{
+                        regex: /møteromsoversikten/ig,
+                        roomname: ""
                     }
 
                 ];
