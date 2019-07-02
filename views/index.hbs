@@ -1,4 +1,3 @@
-{{#if events}}
 <table class="table">
   <thead>
     <tr>
@@ -10,18 +9,21 @@
     </tr>
   </thead>
   <tbody>
+  {{#if events}}
     {{#each events}}
-      <tr>
-        <td>{{this.organizer.emailAddress.name}}</td>
-        <td>{{this.subject}}</td>
-        <td>{{eventDateTime this.start.dateTime}}</td>
-        <td>{{eventDateTime this.end.dateTime}}</td>
-        <td>{{this.location.displayName}}</td>
-      </tr>
+    <tr>
+      <td>{{this.organizer.emailAddress.name}}</td>
+      <td>{{this.subject}}</td>
+      <td>{{eventDateTime this.start.dateTime}}</td>
+      <td>{{eventDateTime this.end.dateTime}}</td>
+      <td>{{meetingroom this.location.displayName}}</td>
+    </tr>
     {{/each}}
   </tbody>
 </table>
 {{else}}
+  </tbody>
+</table>
 <div class="empty" style="display:none">
   <p>Ingen flere møter i dag.</p>
 </div>

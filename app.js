@@ -20,6 +20,98 @@ var moment = require('moment-timezone');
 hbs.registerHelper('eventDateTime', function (dateTime) {
   return moment.utc(dateTime).tz("Europe/Oslo").format('HH:mm')
 });
+hbs.registerHelper('meetingroom', function (room) {
+  var rooms = [
+    {
+      regex: /blåveis/ig,
+      roomname: "Blåveis"
+    },
+    {
+      regex: /hvitveis/ig,
+      roomname: "Hvitveis"
+    },
+    {
+      regex: /soldugg/ig,
+      roomname: "Soldugg"
+    },
+    {
+      regex: /mamrelund/ig,
+      roomname: "Mamrelund"
+    },
+    {
+      regex: /bøk/ig,
+      roomname: "Bøk"
+    },
+    {
+      regex: /eik/ig,
+      roomname: "Eik"
+    },
+    {
+      regex: /hassel/ig,
+      roomname: "Hassel"
+    },
+    {
+      regex: /misteltein/ig,
+      roomname: "Misteltein"
+    },
+    {
+      regex: /stromodden/ig,
+      roomname: "Stormodden"
+    },
+    {
+      regex: /bastøy/ig,
+      roomname: "Bastøy"
+    },
+    {
+      regex: /løvøya/ig,
+      roomname: "Løvøya"
+    },
+    {
+      regex: /rødskjær/ig,
+      roomname: "Rødskjær"
+    },
+    {
+      regex: /vealøs/ig,
+      roomname: "Vealøs"
+    },
+    {
+      regex: /østenskjær/ig,
+      roomname: "Østenskjær"
+    },
+    {
+      regex: /møterom ra/ig,
+      roomname: "Ra"
+    },
+    {
+      regex: /adalsborgen/ig,
+      roomname: "Adalsborgen"
+    },
+    {
+      regex: /ynglingesalen/ig,
+      roomname: "Ynglingesalen"
+    },
+    {
+      regex: /møterom ask/ig,
+      roomname: "Ask"
+    },
+    {
+      regex: /møteromsoversikten/ig,
+      roomname: "DONTSHOW"
+    }
+  ];
+  var roomstr;
+  rooms.forEach(function (i) {
+    if (room.match(i.regex)) {
+      if (i.roomname == "DONTSHOW") {
+      } else {
+        if (roomstr) roomstr += ", ";
+        else roomstr = "";
+        roomstr += i.roomname;
+      }
+    }
+  });
+  return roomstr;
+});
 
 app.use(logger('dev'));
 app.use(express.json());
