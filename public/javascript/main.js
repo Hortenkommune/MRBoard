@@ -38,21 +38,6 @@
     $('.meetings tbody tr').each(function(i){
         $(this).find('td').each(function(j){
             var html = $(this).html();
-            
-            //Check date
-            if (j==2){
-                if (html.slice(0, 10) !== formatDate( new Date() )){
-                    $(this).parent().hide();
-                } else  {
-                    meetings = true;
-                }
-            }
-            
-            //Get time
-            if (j==2 || j==3){
-                $(this).html( html.slice(html.length-5, html.length) );
-            }
-
             //Replace rooms
             if (j==4){
                 var rooms = [
@@ -67,6 +52,65 @@
                     {
                         regex: /soldugg/ig,
                         roomname: "Soldugg"
+                    },
+                    {
+                        regex: /mamrelund/ig,
+                        roomname: "Mamrelund"
+                    },
+                    {
+                        regex: /bøk/ig,
+                        roomname: "Bøk"
+                    },
+                    {
+                        regex: /eik/ig,
+                        roomname: "Eik"
+                    },
+                    {
+                        regex: /hassel/ig,
+                        roomname: "Hassel"
+                    },
+                    {
+                        regex: /misteltein/ig,
+                        roomname: "Misteltein"
+                    },
+                    {
+                        regex: /stromodden/ig,
+                        roomname: "Stormodden"
+                    },
+                    {
+                        regex: /bastøy/ig,
+                        roomname: "Bastøy"
+                    },
+                    {
+                        regex: /løvøya/ig,
+                        roomname: "Løvøya"
+                    },
+                    {
+                        regex: /rødskjær/ig,
+                        roomname: "Rødskjær"
+                    },
+                    {
+                        regex: /vealøs/ig,
+                        roomname: "Vealøs"
+                    },
+                    {
+                        regex: /østenskjær/ig,
+                        roomname: "Østenskjær"
+                    },
+                    {
+                        regex: /møterom ra/ig,
+                        roomname: "Ra"
+                    },
+                    {
+                        regex: /adalsborgen/ig,
+                        roomname: "Adalsborgen"
+                    },
+                    {
+                        regex: /ynglingesalen/ig,
+                        roomname: "Ynglingesalen"
+                    },{
+                        regex: /møteromsoversikten/ig,
+                        roomname: ""
                     }
 
                 ];
@@ -84,9 +128,7 @@
     });
     
     // Show message; No meetings today. 
-    if (!meetings) {
-        $('.meetings .empty').fadeIn();
-    }
+    $('.meetings .empty').fadeIn();
 
     // Show meetings
     $('.meetings').fadeIn();
