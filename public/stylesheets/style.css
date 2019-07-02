@@ -1,5 +1,5 @@
 .header {
-  padding: 2rem 3rem 3rem;
+  padding: 1.5rem 3rem 1.5rem;
   margin-bottom: 2rem;
   background-color: #069;
   color: #fff;
@@ -31,7 +31,7 @@
   width: 240px;
   position: absolute;
   left: 3rem;
-  top: 2rem;
+  top: 1.5rem;
 }
 
 .header .img img {
