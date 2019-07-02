@@ -6,14 +6,15 @@ const AADCALID = process.env.AADCALID;
 module.exports = {
   getEvents: async function (accessToken) {
     var starttime = moment.utc().format();
-    var endtime = moment.utc().add(1, 'days').format();
+    var endtime = moment.utc().add(12, 'hours').format();
     const client = getAuthenticatedClient(accessToken);
     const events = await client
       .api('/users/'+AADCALID+'/events')
       .select('subject','location','organizer','start','end')
-      .filter("start/dateTime ge '" + starttime + "'", "end/dateTime le '" + endtime +"'",'')
+      .filter("end/dateTime ge '"+ starttime +"' and end/dateTime le '"+ endtime +"'")
       .orderby('start/dateTime')
       .get();
+    console.log(events.value)
     return events;
   }
 };
