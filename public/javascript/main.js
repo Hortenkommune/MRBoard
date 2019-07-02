@@ -23,8 +23,8 @@
     // Show meetings
     $('.meetings').fadeIn();
 
-    //Refresh 30 minutes
-    var minutes = 30;    
+    //Refresh 15 minutes
+    var minutes = 15;    
     var millisec = minutes * 60 * 1000;
     setTimeout(function(){
         location.reload();
