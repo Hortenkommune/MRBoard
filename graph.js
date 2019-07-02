@@ -14,7 +14,6 @@ module.exports = {
       .filter("end/dateTime ge '"+ starttime +"' and end/dateTime le '"+ endtime +"'")
       .orderby('start/dateTime')
       .get();
-    console.log(events.value)
     return events;
   }
 };
