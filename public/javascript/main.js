@@ -15,7 +15,7 @@
     $('.header .date').html( formatTime( new Date() ) );
     setInterval(function(){
         $('.header .date').html( formatTime( new Date() ) );
-    }, 60000);
+    }, 15000);
     
     // Show message; No meetings today. 
     $('.meetings .empty').fadeIn();
