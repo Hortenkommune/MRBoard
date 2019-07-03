@@ -14,8 +14,11 @@ router.get('/',
       console.log('failed to aquire access token');
     }
     try {
+      var hiddenregex = /internt møte/ig;
       var events = await graph.getEvents(authToken);
-      params.events = events.value;
+      params.events = events.value.filter(function(string){
+        return !hiddenregex.test(string.location.displayName);
+      });
     } catch (err) {
       console.log(err)
     }
