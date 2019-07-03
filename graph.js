@@ -11,7 +11,7 @@ module.exports = {
     const events = await client
       .api('/users/'+AADCALID+'/events')
       .select('subject','location','organizer','start','end')
-      .filter("end/dateTime ge '"+ starttime +"' and end/dateTime le '"+ endtime +"'")
+      .filter("end/dateTime ge '"+ starttime +"' and start/dateTime le '"+ endtime +"'")
       .orderby('start/dateTime')
       .get();
     return events;
