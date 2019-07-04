@@ -109,6 +109,9 @@ hbs.registerHelper('meetingroom', function (room) {
         roomstr += i.roomname;
       }
     }
+    if (!roomstr) {
+      roomstr = room;
+    }
   });
   return roomstr;
 });
