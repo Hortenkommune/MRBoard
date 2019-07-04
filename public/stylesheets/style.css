@@ -37,7 +37,8 @@
 }
 .meetings .empty {
   color: gray;
-    font-size: 1rem;
+  font-size: 1rem;
+  padding-left: 0.25rem;
 }
 html {
   font-family: Calibri;
