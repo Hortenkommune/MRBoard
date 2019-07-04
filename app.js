@@ -24,75 +24,75 @@ hbs.registerHelper('meetingroom', function (room) {
   var rooms = [
     {
       regex: /blåveis/ig,
-      roomname: "Blåveis"
+      roomname: "Blåveis (1. etg.)"
     },
     {
       regex: /hvitveis/ig,
-      roomname: "Hvitveis"
+      roomname: "Hvitveis (1. etg.)"
     },
     {
       regex: /soldugg/ig,
-      roomname: "Soldugg"
+      roomname: "Soldugg (1. etg.)"
     },
     {
       regex: /mamrelund/ig,
-      roomname: "Mamrelund"
+      roomname: "Mamrelund (1. etg.)"
     },
     {
       regex: /bøk/ig,
-      roomname: "Bøk"
+      roomname: "Bøk (2. etg.)"
     },
     {
       regex: /eik/ig,
-      roomname: "Eik"
+      roomname: "Eik (2. etg.)"
     },
     {
       regex: /hassel/ig,
-      roomname: "Hassel"
+      roomname: "Hassel (2. etg.)"
     },
     {
       regex: /misteltein/ig,
-      roomname: "Misteltein"
+      roomname: "Misteltein (2. etg.)"
     },
     {
       regex: /stromodden/ig,
-      roomname: "Stormodden"
+      roomname: "Stormodden (2. etg.)"
     },
     {
       regex: /bastøy/ig,
-      roomname: "Bastøy"
+      roomname: "Bastøy (3. etg.)"
     },
     {
       regex: /løvøya/ig,
-      roomname: "Løvøya"
+      roomname: "Løvøya (3. etg.)"
     },
     {
       regex: /rødskjær/ig,
-      roomname: "Rødskjær"
+      roomname: "Rødskjær (3. etg.)"
     },
     {
       regex: /vealøs/ig,
-      roomname: "Vealøs"
+      roomname: "Vealøs (3. etg.)"
     },
     {
       regex: /østenskjær/ig,
-      roomname: "Østenskjær"
+      roomname: "Østenskjær (3. etg.)"
     },
     {
       regex: /møterom ra/ig,
-      roomname: "Ra"
+      roomname: "Ra (4. etg.)"
     },
     {
       regex: /adalsborgen/ig,
-      roomname: "Adalsborgen"
+      roomname: "Adalsborgen (u. etg.)"
     },
     {
       regex: /ynglingesalen/ig,
-      roomname: "Ynglingesalen"
+      roomname: "Ynglingesalen (u. etg.)"
     },
     {
       regex: /møterom ask/ig,
-      roomname: "Ask"
+      roomname: "Ask (2. etg.)"
     },
     {
       regex: /møteromsoversikten/ig,
