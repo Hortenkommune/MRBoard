@@ -1,58 +1,53 @@
 .header {
-  padding: 1.5rem 3rem 1.5rem;
-  margin-bottom: 2rem;
+  padding: 1rem 1rem 1rem;
+  margin-bottom: 1rem;
   background-color: #069;
   color: #fff;
+  font-size: 1rem;
+}
+.header h1{
   font-size: 2rem;
 }
-
-.header h1{
-  font-size: 3.5rem;
-}
-
 .header p{
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
-
 .header .text {
   margin-top: 0.5rem;
   text-align: center;
 }
-
 .header .date {
-  font-size: 5.5rem;
+  font-size: 3rem;
   margin-left: 5rem;
   position: absolute;
   top: 1.5rem;
   right: 3rem;
 }
-
 .header .img {
-  width: 240px;
+  width: 10rem;
   position: absolute;
   left: 3rem;
-  top: 1.5rem;
+  top: 1rem;
 }
-
 .header .img img {
   width: 100%;
 }
-
 .meetings {
   margin: 0 auto;
   padding: 0 3rem;
 }
-
 .meetings .empty {
   color: gray;
-    font-size: 35px;
+    font-size: 1rem;
 }
-
-body {
+html {
   font-family: Calibri;
-  font-size: 35px;
+  font-size: 15px;
 }
-
+@media screen and (min-width:1280px) {
+  html {
+    font-size: 20px;
+  }
+}
 .alert-pre {
   word-wrap: break-word;
   word-break: break-all;
