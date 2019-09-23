@@ -51,11 +51,6 @@ html {
     background-color: #fff;
   }
 }
-.alert-pre {
-  word-wrap: break-word;
-  word-break: break-all;
-  white-space: pre-wrap;
-}
 body {
   background-color: #fff;
 }
