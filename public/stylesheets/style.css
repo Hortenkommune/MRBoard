@@ -1,50 +1,55 @@
 .header {
-  padding: 20px 20px 20px;
-  margin-bottom: 20px;
+  padding: 1rem 1rem 1rem;
+  margin-bottom: 1rem;
   background-color: #069;
   color: #fff;
-  font-size: 10px;
+  font-size: 1rem;
 }
 .header h1{
-  font-size: 40px;
+  font-size: 2rem;
 }
 .header p{
-  font-size: 20px;
+  font-size: 1rem;
 }
 .header .text {
-  margin-top: 10px;
+  margin-top: 0.5rem;
   text-align: center;
 }
 .header .date {
-  font-size: 60px
-  ;
-  margin-left: 100px;
+  font-size: 3rem;
+  margin-left: 5rem;
   position: absolute;
-  top: 30px;
-  right: 60px;
+  top: 1.5rem;
+  right: 3rem;
 }
 .header .img {
-  width: 200px;
+  width: 10rem;
   position: absolute;
-  left: 60px;
-  top: 20px;
+  left: 3rem;
+  top: 1rem;
 }
 .header .img img {
   width: 100%;
 }
 .meetings {
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 3rem;
 }
 .meetings .empty {
   color: gray;
-  font-size: 20px;
-  padding-left: 5px;
+  font-size: 1rem;
+  padding-left: 0.25rem;
 }
 html {
-  font-family: Calibri;
-  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
   background-color: #fff;
+}
+@media screen and (min-width:1280px) {
+  html {
+    font-size: 20px;
+    background-color: #fff;
+  }
 }
 body {
   background-color: #fff;
