@@ -7,8 +7,8 @@ module.exports = {
   getEvents: async function (accessToken) {
     var starttime = moment.utc().format();
     var endtime = moment.utc().add(12, 'hours').format();
-    console.log(starttime)
-    console.log(endtime)
+    //console.log(starttime)
+    //console.log(endtime)
     const client = getAuthenticatedClient(accessToken);
     const events = await client
       .api('/users/' + AADCALID + '/calendar/calendarView?startDateTime=' + starttime + '&endDateTime=' + endtime)
