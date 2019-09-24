@@ -7,9 +7,11 @@
 }
 .header h1{
   font-size: 2rem;
+  margin-bottom: 0;
 }
 .header p{
   font-size: 1rem;
+  margin-top: 0;
 }
 .header .text {
   margin-top: 0.5rem;
@@ -19,14 +21,14 @@
   font-size: 3rem;
   margin-left: 5rem;
   position: absolute;
-  top: 1.5rem;
+  top: 2.4rem;
   right: 3rem;
 }
 .header .img {
   width: 10rem;
   position: absolute;
   left: 3rem;
-  top: 1rem;
+  top: 1.2rem;
 }
 .header .img img {
   width: 100%;
@@ -34,6 +36,17 @@
 .meetings {
   margin: 0 auto;
   padding: 0 3rem;
+}
+.meetings table {
+  text-align: left;
+  width: 100%;
+  border-spacing: 0;
+}
+.meetings table tr {
+  height: 3rem;
+}
+.meetings table tr td {
+  border-top: 1px solid #ccc;
 }
 .meetings .empty {
   color: gray;
@@ -44,6 +57,7 @@ html {
   font-family: Calibri;
   font-size: 15px;
   background-color: #fff;
+  border: none;
 }
 @media screen and (min-width:1280px) {
   html {
@@ -53,4 +67,5 @@ html {
 }
 body {
   background-color: #fff;
+  margin: 0;
 }
