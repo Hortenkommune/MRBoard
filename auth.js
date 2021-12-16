@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('isomorphic-fetch');
 
 var request = require('request');
 
