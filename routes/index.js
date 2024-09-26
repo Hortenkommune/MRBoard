@@ -1,22 +1,15 @@
-var express = require('express');
-var auth = require('../auth');
-var graph = require('../graph.js');
-
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const fetch = require('../fetch');
 
 /* GET home page. */
 router.get('/', 
   async function(req, res) {
     let params = {};
     try {
-      var authToken = await auth.getAccessToken();
-    } catch (err) {
-      console.log('failed to aquire access token');
-    }
-    try {
-      var hiddenregex = /internt møte/ig;
-      var events = await graph.getEvents(authToken);
-      params.events = events.value.filter(function(string){
+      const hiddenregex = /internt møte/ig;
+      const events = await fetch.getCalendarData();
+      params.events = events.filter(function(string){
         return !hiddenregex.test(string.location.displayName);
       });
     } catch (err) {
