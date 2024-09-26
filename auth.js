@@ -1,33 +1,37 @@
 require('dotenv').config();
-require('isomorphic-fetch');
+const msal = require('@azure/msal-node');
 
-var request = require('request');
-
-const TOKEN_ENDPOINT = process.env.TOKEN_ENDPOINT;
+const TENANT_ID = process.env.TENANT_ID;
+const AAD_ENDPOINT = process.env.AAD_ENDPOINT;
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const GRAPH_ENDPOINT = process.env.GRAPH_ENDPOINT;
+const AADCALID = process.env.AADCALID;
 
-// The auth module object.
-var auth = {};
+const msalConfig = {
+  auth: {
+    clientId: CLIENT_ID,
+    authority: AAD_ENDPOINT + '/' + TENANT_ID,
+    clientSecret: CLIENT_SECRET,
+  }
+};
 
-auth.getAccessToken = function () {
-  return new Promise(function (resolve, reject){
-    var requestParams = {
-      client_id: CLIENT_ID,
-      client_secret: CLIENT_SECRET,
-      scope: 'https://graph.microsoft.com/.default',
-      grant_type: 'client_credentials'
-    };
-    request.post({ url: TOKEN_ENDPOINT, form: requestParams }, function (err, response, body) {
-      var parsedBody = JSON.parse(body);
-      if (err) {
-        reject(err);
-      } else if (parsedBody.error) { 
-        reject(parsedBody.error);
-      } else {
-        resolve(parsedBody.access_token);
-      }
-    });
-  });
+const tokenRequest = {
+  scopes: [GRAPH_ENDPOINT + '/.default'],
+};
+
+const apiConfig = {
+  uri: GRAPH_ENDPOINT + '/v1.0/users/' + AADCALID + '/calendar/calendarView'
+};
+
+const cca = new msal.ConfidentialClientApplication(msalConfig);
+
+async function getToken(tokenRequest) {
+  return await cca.acquireTokenByClientCredential(tokenRequest);
 }
-module.exports = auth;
+
+module.exports = {
+  apiConfig: apiConfig,
+  tokenRequest: tokenRequest,
+  getToken: getToken
+};
