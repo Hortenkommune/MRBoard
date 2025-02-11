@@ -1,7 +1,6 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Arrangør</th>
       <th scope="col">Tittel</th>
       <th scope="col">Start</th>
       <th scope="col">Slutt</th>
@@ -12,7 +11,6 @@
   {{#if events}}
     {{#each events}}
     <tr>
-      <td>{{this.organizer.emailAddress.name}}</td>
       <td>{{this.subject}}</td>
       <td>{{eventDateTime this.start.dateTime}}</td>
       <td>{{eventDateTime this.end.dateTime}}</td>
