@@ -1,5 +1,4 @@
 require('dotenv').config();
-const axios = require('axios');
 const moment = require("moment-timezone");
 
 const auth = require('./auth');
@@ -19,8 +18,14 @@ async function getCalendarData() {
     };
 
     try {
-        const response = await axios.get(endpoint, options);
-        return response.data.value;  
+        const response = await fetch(endpoint, options);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        return data.value;  
     } catch (error) {
         console.log(error);
         return error;
